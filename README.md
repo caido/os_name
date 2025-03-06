@@ -12,3 +12,7 @@ let os_info = get_os_info();
 
 assert_eq!(os_info.name.unwrap(), "Sonoma");
 ```
+
+## Features
+
+- `serde`: Enable this feature to add Serde support.
