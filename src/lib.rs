@@ -1,9 +1,10 @@
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 
+#[cfg(target_os = "linux")]
+pub use self::linux::get_os_info;
 #[cfg(target_os = "macos")]
 pub use self::macos::get_os_info;
-
 #[cfg(target_os = "windows")]
 pub use self::windows::get_os_info;
 

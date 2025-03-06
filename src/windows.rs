@@ -57,6 +57,5 @@ mod tests {
         assert_eq!(os_info.kind, OsKind::Windows);
         assert!(os_info.version.is_some());
         assert!(os_info.name.is_some());
-        println!("{:?}", os_info);
     }
 }
