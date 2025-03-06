@@ -1,0 +1,14 @@
+[package]
+name = "os_name"
+version = "0.1.0"
+edition = "2024"
+
+
+[features]
+serde = ["dep:serde"]
+
+[dependencies]
+serde = { version = "1", optional = true }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+libc = "^0.2.170"
