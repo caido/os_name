@@ -1,5 +1,7 @@
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
+#[cfg(feature = "strum")]
+use strum::{Display, EnumString};
 
 #[cfg(target_os = "linux")]
 pub use self::linux::get_os_info;
@@ -17,6 +19,7 @@ mod windows;
 
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 #[cfg_attr(feature = "serde", serde(rename_all = "snake_case"))]
+#[cfg_attr(feature = "strum", derive(Display, EnumString))]
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum OsKind {
     Linux,
